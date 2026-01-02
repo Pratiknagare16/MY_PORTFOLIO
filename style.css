@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Full page background layer */
+#skill-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -999;
+  transition: background 0.8s ease;
+  background: linear-gradient(135deg, #020617, #0f172a);
+}
+
+/* Background themes */
+.bg-frontend { background: linear-gradient(135deg, #38bdf8, #0ea5e9); }
+.bg-cpp { background: linear-gradient(135deg, #1e3a8a, #020617); }
+.bg-java { background: linear-gradient(135deg, #7c2d12, #f97316); }
+.bg-python { background: linear-gradient(135deg, #1e40af, #facc15); }
+.bg-dsa { background: linear-gradient(135deg, #064e3b, #22c55e); }
+
+/* Allow background to show */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: transparent;
+  color: white;
+}
+
+/* Navigation */
+nav {
+  padding: 20px 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+}
+
+.left {
+  max-width: 500px;
+}
+
+.left h1 {
+  font-size: 48px;
+}
+
+.left span {
+  color: #38bdf8;
+}
+
+.left p {
+  margin: 20px 0;
+  color: #cbd5f5;
+}
+
+/* Buttons */
+.buttons a {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-right: 15px;
+  border-radius: 30px;
+  background: #38bdf8;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  transform: scale(1.1);
+}
+
+.buttons .outline {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+/* Profile image */
+.right img {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #38bdf8;
+}
+
+/* Typing animation */
+.typing {
+  font-size: 20px;
+  color: #cbd5f5;
+  height: 30px;
+}
+
+.giggle {
+  display: inline-block;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.skill {
+  padding: 15px 30px;
+  border-radius: 30px;
+  background: #020617;
+  color: #38bdf8;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(56,189,248,0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  background: #38bdf8;
+  color: black;
+}
+
+/* Section titles */
+.title {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 28px;
+}
+
+/* Profile grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.box {
+  background: rgba(2,6,23,0.9);
+  padding: 40px;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(56,189,248,0.4);
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  background: #38bdf8;
+  color: black;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right img {
+    margin-top: 30px;
+    width: 200px;
+  }
+}
+#effect-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Frontend */
+.frontend-effect {
+  background: linear-gradient(120deg, #38bdf8, #0ea5e9, #38bdf8);
+  background-size: 300% 300%;
+  animation: moveBG 5s infinite;
+}
+
+/* C++ */
+.cpp-effect {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(56,189,248,0.2) 0px,
+    rgba(56,189,248,0.2) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: matrix 0.8s linear infinite;
+}
+
+/* Java */
+.java-effect {
+  background: radial-gradient(circle at center, rgba(249,115,22,0.4), transparent 60%);
+}
+
+/* Python */
+.python-effect {
+  background: linear-gradient(90deg, #1e40af, #facc15, #1e40af);
+  background-size: 300%;
+  animation: moveBG 4s infinite;
+}
+
+/* DSA */
+.dsa-effect {
+  background: repeating-radial-gradient(circle, rgba(34,197,94,0.4) 0, transparent 10px);
+}
+
+/* Animations */
+@keyframes moveBG {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+@keyframes matrix {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+#frontend-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.frontend-active #frontend-rain {
+  display: block;
+}
+
+.page-card {
+  position: absolute;
+  top: -120px;
+  width: 180px;
+  height: 120px;
+  background: linear-gradient(145deg, #38bdf8, #0ea5e9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(56,189,248,0.7);
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+.page-card::after {
+  content: "UI";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: black;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+@keyframes fall {
+  from { transform: translateY(-150px); }
+  to { transform: translateY(120vh); }
+}
+#java-tasks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.java-active #java-tasks {
+  display: block;
+}
+
+.java-box {
+  position: absolute;
+  left: -200px;
+  width: 160px;
+  height: 80px;
+  background: linear-gradient(135deg, #7c2d12, #f97316);
+  color: white;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(249,115,22,0.8);
+  animation: runTask linear infinite;
+}
+
+@keyframes runTask {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(120vw); }
+}
+#dsa-lab {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.dsa-active #dsa-lab {
+  display: block;
+}
+
+.dsa-node {
+  position: absolute;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #064e3b, #22c55e);
+  color: black;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(34,197,94,0.8);
+  animation: floatDSA linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatDSA {
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-120px); }
+}
+#cpp-game {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.cpp-active #cpp-game {
+  display: block;
+}
+
+/* Enemies */
+.enemy {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: red;
+  border-radius: 8px;
+  box-shadow: 0 0 15px red;
+  animation: enemyMove linear infinite;
+}
+
+/* Bullets */
+.bullet {
+  position: absolute;
+  width: 10px;
+  height: 4px;
+  background: yellow;
+  box-shadow: 0 0 10px yellow;
+  animation: shoot linear infinite;
+}
+
+/* Score HUD */
+.score {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: lime;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@keyframes enemyMove {
+  from { transform: translateX(110vw); }
+  to { transform: translateX(-50px); }
+}
+
+@keyframes shoot {
+  from { transform: translateX(-50px); }
+  to { transform: translateX(110vw); }
+}
+#achievement-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.achievement-active #achievement-layer {
+  display: block;
+}
+
+/* Trophy icons */
+.trophy {
+  position: absolute;
+  font-size: 32px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(110vh); opacity: 1; }
+  to { transform: translateY(-50px); opacity: 0; }
+}
+#cert-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  overflow: hidden;
+}
+
+.cert-active #cert-layer {
+  display: block;
+}
+
+/* Certificate paper */
+.cert-paper {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(56,189,248,0.6);
+  animation: floatCert linear infinite;
+}
+
+/* Ribbon */
+.cert-paper::after {
+  content: "✔";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: #38bdf8;
+  color: black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+@keyframes floatCert {
+  from { transform: translateY(110vh) rotate(0deg); }
+  to { transform: translateY(-100px) rotate(360deg); }
+}
+#project-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  background: rgba(0,0,0,0.8);
+  overflow: hidden;
+}
+
+.project-active #project-layer {
+  display: block;
+}
+
+/* Code stream */
+.code-line {
+  position: absolute;
+  color: #22c55e;
+  font-family: monospace;
+  font-size: 14px;
+  white-space: nowrap;
+  animation: scrollCode linear infinite;
+}
+
+@keyframes scrollCode {
+  from { transform: translateX(110vw); opacity: 1; }
+  to { transform: translateX(-200px); opacity: 0; }
+}
+
+/* Terminal */
+.terminal {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 320px;
+  height: 200px;
+  background: #020617;
+  border: 2px solid #22c55e;
+  border-radius: 10px;
+  padding: 10px;
+  color: #22c55e;
+  font-family: monospace;
+  box-shadow: 0 0 30px #22c55e;
+}
+#edu-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+  background: radial-gradient(circle at center, #020617, #000);
+  overflow: hidden;
+}
+
+.edu-active #edu-layer {
+  display: block;
+}
+
+/* Brain nodes */
+.neuron {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #38bdf8;
+}
+
+/* Neural connections */
+.synapse {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}

@@ -1,0 +1,71 @@
+.subtitle {
+  text-align: center;
+  color: #cbd5f5;
+  margin-bottom: 40px;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.edu-card {
+  background: linear-gradient(145deg, #020617, #0f172a);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(56,189,248,0.3);
+  position: relative;
+  transition: 0.4s;
+  text-align: center;
+}
+
+.edu-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 50px #38bdf8;
+}
+
+.edu-card h2 {
+  color: #38bdf8;
+  margin: 15px 0;
+}
+
+.edu-card p {
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+.status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+
+.completed {
+  background: #22c55e;
+}
+
+.pursuing {
+  background: #facc15;
+}
+
+.more {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.highlight {
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 50px rgba(56,189,248,0.7);
+}
